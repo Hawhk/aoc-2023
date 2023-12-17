@@ -1,14 +1,14 @@
 package day3
 
 import (
-	"fmt"
 	"log"
 	"os"
 	"testing"
 )
 
+var data = readData()
+
 func TestPart1(t *testing.T) {
-	data := readData(1)
 	whant := 4361
 
 	got := Part1(data)
@@ -19,7 +19,6 @@ func TestPart1(t *testing.T) {
 }
 
 func TestPart2(t *testing.T) {
-	data := readData(2)
 	whant := 467835
 
 	got := Part2(data)
@@ -29,8 +28,8 @@ func TestPart2(t *testing.T) {
 	}
 }
 
-func readData(part int) string {
-	content, err := os.ReadFile(fmt.Sprintf("./data/test-%d.txt", part))
+func readData() string {
+	content, err := os.ReadFile("./data/test.txt")
 	if err != nil {
 		log.Fatal(err)
 	}

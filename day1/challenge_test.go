@@ -1,16 +1,15 @@
 package day1
 
 import (
-	"fmt"
 	"log"
 	"os"
 	"testing"
 )
 
-func TestPart1(t *testing.T) {
-	data := readData(1)
-	whant := 142
+var data = readData()
 
+func TestPart1(t *testing.T) {
+	whant := 142
 	got := Part1(data)
 
 	if got != whant {
@@ -19,9 +18,7 @@ func TestPart1(t *testing.T) {
 }
 
 func TestPart2(t *testing.T) {
-	data := readData(2)
 	whant := 281
-
 	got := Part2(data)
 
 	if got != whant {
@@ -29,8 +26,8 @@ func TestPart2(t *testing.T) {
 	}
 }
 
-func readData(part int) string {
-	content, err := os.ReadFile(fmt.Sprintf("./data/test-%d.txt", part))
+func readData() string {
+	content, err := os.ReadFile("./data/test.txt")
 	if err != nil {
 		log.Fatal(err)
 	}

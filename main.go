@@ -83,7 +83,7 @@ func runChallengeAsync(day string, part string, wg *sync.WaitGroup) {
 }
 
 func runChallenge(day string, part string) {
-	content, err := os.ReadFile(fmt.Sprintf("./day%s/data/%s.txt", day, part))
+	content, err := os.ReadFile(fmt.Sprintf("./day%s/data/data.txt", day))
 	if err != nil {
 		log.Fatal(err)
 	}
